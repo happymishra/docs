@@ -5,9 +5,6 @@ sudo su
 ls -larth
 ls -larth ./newdir
 
-# Get all project
-htop
-
 # Grep
 pip list | grep abc
 pip list | grep -i abc    ; Case insensitive
@@ -78,7 +75,7 @@ celery -A data_validation.dv_scheduler inspect active
 
 
 # Connecting to redis
-redis-cli -h 192.168.3.62 -p 6379 -n DATABASE_NUMBER
+redis-cli -h ip_address -p 6379 -n DATABASE_NUMBER
 
 
 # Purge any specific Queue
@@ -96,13 +93,18 @@ whoami
 # Go to the end of the vi file
 shift + g
 
-
+upload_cmd = [
+            "/usr/bin/gsutil", "-o", "Credentials:gs_service_key_file=%s" % G_ENV_VAR_VAL, "cp",
+            '/home/jenkins/backups/alphapublish/apdata_1335306_13059_2019-04-26-080419.tar.gz', 'gs://vabackups/alphapublish_dev/'
+        ]
 
 https://serverfault.com/questions/947726/how-to-use-json-keys-with-google-cloud-gsutil-to-manage-multiple-keys
 https://serverfault.com/questions/612672/how-do-i-access-a-google-cloud-storage-bucket-using-a-service-account-from-the-c
 
 # Activate glcound using service account json file:
-gcloud auth activate-service-account --key-file /home/rupesh/VA/AlphaPublish/ap1/alphapublish/va-ins-dev-28f3257cd06d.json
+gcloud auth activate-service-account --key-file /home/rupesh/VA/AlphaPublish/ap1/alphapublish/gpubsub/.config/gcloud/legacy_credentials/alerts@visiblealpha.com/alphapublish-dev.json
+
+/home/jenkins/.config/gcloud/legacy_credentials/alerts@visiblealpha.com/adc.json
 
 # Set project for the goole cloud
 gcloud config set project va-ins-dev
@@ -140,19 +142,6 @@ userdel username
 userdel -r username
 
 
-# Another proxmos
-192.168.13.44
-engg
-engg1234
-
-jenkins users
-pwd - alpha123
-
-
-parikshit proxmos ip - 192.168.13.28
-pwd - alpha1234
-
-
 # Supervisor install
 sudo apt-get install supervisor
 supervisord --version
@@ -167,10 +156,13 @@ vi /ect/environment
 source /etc/environment
 
 # Connection to MySQL
-mysqldump -h dev-dapdb.visiblealpha.com -u engg -pengg1234 databasename
+mysqldump -h server -u username -pPassword databasename
 
 # Create file in Linux
 touch filename
 
 # Get filesize
 du -hs /path/to/directory
+
+# Renaming files in ubuntu
+mv filename1.txt filename2.txt

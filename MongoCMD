@@ -13,9 +13,9 @@ use db
 
 
 Creating multipe instance of mongodb on the same server
-mongod --dbpath /var/lib/mongodb2 --port 27018
+sudo mongod --dbpath /var/lib/mongodb2 --port 27020
 
-mongo --port 27018
+sudo mongo --port 27020
 
 
 
