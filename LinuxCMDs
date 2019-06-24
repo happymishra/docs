@@ -17,11 +17,17 @@ ps -aux | less   ; a - all users ; u - detail information about each process; x 
 # Create virtual environment
 virtual dqenv
 
+# Installing and uninstalling pip
+sudo python3 -m pip uninstall pip && sudo apt install python3-pip --reinstall
+
+
+
 # Get list of all users
 cat /etc/passwd
 
 # Print in a formatted way
 awk -F: '{print $1}' /etc/passwd
+
 
 # Run celery:
 
@@ -43,8 +49,18 @@ sudo kill -9 process_id # here 29042
 sudo kill -9 id1 id2 id3 ...
 ps auxww | grep 'celery worker' | awk '{print $2}' | xargs kill -9
 
+
+# Copy files between remote servers
+scp remote_user@remote_host:/path/to/remote/file /path/to/local/file
+
+# Copy directory between remote servers
+scp -r remote_user@remote_host:/path/to/remote/file /path/to/local/file
+
 # Remove directory
 rm -r dirname
+
+# Remove all files inside directory without removing the directory
+rm -r /path/to/directory/*
 
 # Remove files
 rm filename1 filename2
@@ -112,6 +128,19 @@ gcloud config set project va-ins-dev
 # List files inside bucket
 gsutil ls gs://alphapublish
 
+# List authentications
+gcloud auth list
+
+gcloud auth revoke rupesh.mishra@visiblealpha.com
+
+gcloud config set account rupesh.mishra@visiblealpha.com
+
+gcloud auth login
+
+# Download file from google cloud storage
+gsutl cp source destination
+
+
 
 # Change User
 su jenkins
@@ -166,3 +195,9 @@ du -hs /path/to/directory
 
 # Renaming files in ubuntu
 mv filename1.txt filename2.txt
+
+# Get CPU information
+cat /proc/cpuinfo
+
+# Get memory info
+cat /proc/meminfo

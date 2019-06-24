@@ -13,7 +13,6 @@ pipenv lock
 
 # Get the pipenv python environment
 pipenv run which python
-
 pipenv --venv
 
 

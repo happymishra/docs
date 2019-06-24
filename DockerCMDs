@@ -28,7 +28,7 @@ docker build -f baseimagename .
 
 # Give name to the baseimagename while building
 docker build -f baseimagename . -t newname
-e.g.: docker build -f baseimagename  -t rupesh123/dqchecks
+e.g.: docker build -f baseimagename . -t rupesh123/dqchecks
 
 # Docker build images
 docker build . -t imagename

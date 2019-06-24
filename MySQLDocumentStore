@@ -1,0 +1,68 @@
+# Check the plugins installed using MySQL shell
+mysqlsh -u root -sqlc -P 3306 -e "SHOW plugins"
+
+# Check the plugins installed using MySQL cmd
+mysql -u root -p -e "SHOW plugins"
+
+# Quit shell
+\quit
+
+# Inside mysql - install msqlx plugins
+INSTALL PLUGIN mysqlx SONAME 'mysqlx.so';
+
+# Inside MySQL - Check plugins installed
+SHOW PLUGINS
+
+# Python packages
+pip install mysql-connector-python
+
+# Connecting to MySQL shell
+mysqlsh --user=root --password=root --port=33060 --host localhost --python
+
+
+# Listing all schema
+session.get_schemas()
+
+# List all collections
+db.get_collections()
+
+# List all indexes
+session.sql("SHOW INDEX FROM mysql_ds.13059");
+
+# Show table status
+SHOW TABLE STATUS FROM dbname
+
+SELECT database_name, table_name, index_name, stat_value*@@innodb_page_size
+from mysql.innodb_index_stats where stat_name='size';
+
+# Get table defintion
+DESCRIBE tablename
+SHOW CREATE TABLE tablename
+
+
+
+========================= Postgress ==========================================
+
+# Start Postgres
+sudo su - postgres
+
+# post gres version psql version
+psql -V
+
+# postgres version
+/usr/lib/postgresql/11/bin/postgres -V
+
+# Connect with database
+psql
+
+# List all the databases
+\list
+
+# Get all tables in a schema
+\dt
+
+# Table definition
+\d tablename
+
+# COnnection info
+\conninfo
