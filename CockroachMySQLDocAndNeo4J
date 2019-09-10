@@ -1,0 +1,88 @@
+========================= Cockroach DB =======================================
+
+# Cockroch DB start the nodes
+
+Start first node
+cockroach start --insecure --listen-addr=localhost
+
+Start second node
+cockroach start --insecure --store=node2 --listen-addr=localhost:26258 --http-addr=localhost:8081 --join=localhost:26257
+
+Start third node
+cockroach start --insecure --store=node3 --listen-addr=localhost:26259 --http-addr=localhost:8082 --join=localhost:26257
+
+
+
+Cockroach sql
+cockroach sql --insecure --host=localhost:26257
+
+CREATE USER IF NOT EXISTS rupesh;
+
+GRANT ALL ON DATABASE sli_revision TO rupesh;
+
+
+=================== MySQL ====================================================================================
+
+# Installing mysql on ubuntu
+https://support.rackspace.com/how-to/installing-mysql-server-on-ubuntu/
+
+# start local mysql
+mysql -u root -p
+
+# Connect to different database on different port
+mysql --host=127.0.0.1 --port=9999 -u root -p dbname
+
+
+
+===================================== Neo4j ===================================================================
+
+Installation: https://medium.com/@Jessicawlm/installing-neo4j-on-ubuntu-14-04-step-by-step-guide-ed943ec16c56
+
+Neo4j
+
+username: neo4j
+password: neo4j
+
+Web ui - http://localhost:7474/browser/
+
+# Start neo4j service:
+sudo service neo4j restart
+
+
+# deleting all the data from Neo4j
+MATCH(n)
+OPTIONAL MATCH (n) - [r] - ()
+DELETE n, r
+
+MATCH (n:SLI {revdpid: 123}) -[]-> (b) return a,b
+
+MATCH (n: SLI {revdpid:3611496760}) - [*]->(b) RETURN {node:n, rel:b} as pair
+
+MATCH (p:Person)
+OPTIONAL MATCH (p)<-[:REPORTS_TO]-(c)
+RETURN {parent : p.name, child : {name :collect( c.name)}}
+
+
+MATCH (p:Person)<-[:REPORTS_TO*]-(c:Person)
+WHERE p.name = "X"
+WITH COLLECT (c) + p AS all UNWIND all as p
+MATCH (p)<-[:REPORTS_TO]-(c)
+RETURN {parent : p.name, child : {name :collect( c.name)}}
+
+-----
+
+MATCH (n: SLI {revdpid:3611496760})- [*]->(b)
+WITH COLLECT (b) + n AS all UNWIND all as n
+MATCH (n)-[*]-> (b)
+RETURN {parent:n,child: {name:collect(b)} }
+
+
+MATCH(n),(b)
+WHERE n.revdpid = b.parent_id
+CREATE (n)-[:MADE_FROM]->(b)
+
+
+CREATE CONSTRAINT ON (p:SLI)
+ASSERT p.revdpid IS UNIQUE
+
+CREATE INDEX ON :Person(firstname)

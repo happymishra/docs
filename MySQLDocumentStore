@@ -64,5 +64,5 @@ psql
 # Table definition
 \d tablename
 
-# COnnection info
+# Connection info
 \conninfo

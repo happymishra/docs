@@ -6,7 +6,7 @@ sudo su
 ```
 
 ```
-# File listin
+# File listing
 ls -larth
 ls -larth ./newdir
 ```
@@ -139,6 +139,8 @@ celery -A data_validation.dv_scheduler inspect active
 ```
 # Connecting to redis
 redis-cli -h ip_address -p 6379 -n DATABASE_NUMBER
+
+redis-cli -h host -p port -a password
 ```
 
 ```
@@ -300,4 +302,43 @@ cat /proc/cpuinfo
 ```
 # Get memory info
 cat /proc/meminfo
+```
+
+```
+# Check folder size:
+du -j foldername
+
+# Check the drive on which the folder is mounted
+df -P file/goes/here | tail -1 | cut -d' ' -f 1
+```
+
+```
+# Delete file inside current directory
+find . -name '*.pyc' -delete
+
+```
+
+```
+# Check RAM
+free -m in MB
+free -g in GB
+```
+
+```
+# Get disk space
+df -kh
+```
+
+```
+# Search in VI
+/varaibletoseach and enter
+
+# For multiple search
+press N
+```
+
+```
+# To check if the service working on the port
+telnet
+ping  # for the ip
 ```

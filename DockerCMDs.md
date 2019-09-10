@@ -44,6 +44,11 @@ docker build -f baseimagename .
 ```
 
 ```shell
+# Build docker images
+docker build -f docker_base_image . -t rupesh123/populate_data
+```
+
+```shell
 # Give name to the baseimagename while building
 docker build -f baseimagename . -t newname
 # e.g.: docker build -f baseimagename . -t rupesh123/dqchecks
@@ -81,7 +86,7 @@ docker logs -f containername
 
 ```shell
 # Docker building and running containers using docker-compose
-docker-compose -f docker-compose.yml -f dev.yml up -d 
+docker-compose -f docker-compose.yml -f dev.yml up -d
 # -d is for daemon
 ```
 
