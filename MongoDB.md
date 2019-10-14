@@ -203,19 +203,23 @@ db.schvaactualsrevision.createIndex({'cid': 1, 'rid': 1}, { unique: true } )
 
 db.getUser('username')
 
+db.slirevision.createIndex({'ct': 1})
 
-db.slirevision.find({'cid':19509})
-db.sliconsensusrevision.find({'cid':19509})
-db.slivaactualsrevision.find({'cid':19509})
-db.normalizedrevision.find({'cid':19509})
-db.consensusrevision.find({'cid':19509})
-db.vaactualsrevision.find({'cid':19509})
-db.schedulerevision.find({'cid':19509})
-db.scheduleconsensusrevision.find({'cid':19509})
-db.schvaactualsrevision.find({'cid':19509})
+
+
+
+db.slirevision.find({'cid':18941}).count()
+db.sliconsensusrevision.find({'cid':18941}).count()
+db.slivaactualsrevision.find({'cid':18941}).count()
+db.normalizedrevision.find({'cid':18941}).count()
+db.consensusrevision.find({'cid':18941}).count()
+db.vaactualsrevision.find({'cid':18941}).count()
+db.schedulerevision.find({'cid':18941}).count()
+db.scheduleconsensusrevision.find({'cid':18941}).count()
+db.schvaactualsrevision.find({'cid':18941}).count()
 
 db.slirevision.remove({'cid':13059})
-db.sliconsensusrevision.remove({'cid':13059})
+db.slirevision.remove({'cid':13059})
 db.slivaactualsrevision.remove({'cid':13059})
 db.normalizedrevision.remove({'cid':13059})
 db.consensusrevision.remove({'cid':13059})
@@ -224,6 +228,38 @@ db.schedulerevision.remove({'cid':13059})
 db.scheduleconsensusrevision.remove({'cid':13059})
 db.schvaactualsrevision.remove({'cid':13059})
 
+
+db.slirevision.update({}, {$set: {'ct': new Date()}}, false, true)
+db.sliconsensusrevision.update({}, {$set: {'ct': new Date()}}, false, true)
+db.slivaactualsrevision.update({}, {$set: {'ct': new Date()}}, false, true)
+db.normalizedrevision.update({}, {$set: {'ct': new Date()}}, false, true)
+db.consensusrevision.update({}, {$set: {'ct': new Date()}}, false, true)
+db.vaactualsrevision.update({}, {$set: {'ct': new Date()}}, false, true)
+db.schedulerevision.update({}, {$set: {'ct': new Date()}}, false, true)
+db.scheduleconsensusrevision.update({}, {$set: {'ct': new Date()}}, false, true)
+db.schvaactualsrevision.update({}, {$set: {'ct': new Date()}}, false, true)
+
+
+
+db.slirevision.update({'cid': 13059}, {$set: {'ct': new Date()}}, false, true)
+db.sliconsensusrevision.update({'cid': 13059}, {$set: {'ct': new Date()}}, false, true)
+db.slivaactualsrevision.update({'cid': 13059}, {$set: {'ct': new Date()}}, false, true)
+db.normalizedrevision.update({'cid': 13059}, {$set: {'ct': new Date()}}, false, true)
+db.consensusrevision.update({'cid': 13059}, {$set: {'ct': new Date()}}, false, true)
+db.vaactualsrevision.update({'cid': 13059}, {$set: {'ct': new Date()}}, false, true)
+db.schedulerevision.update({'cid': 13059}, {$set: {'ct': new Date()}}, false, true)
+db.scheduleconsensusrevision.update({'cid': 13059}, {$set: {'ct': new Date()}}, false, true)
+db.schvaactualsrevision.update({'cid': 13059}, {$set: {'ct': new Date()}}, false, true)
+
+db.slirevision.update({}, {$set: {'ct': new Date()}}, false, true)
+db.sliconsensusrevision.update({}, {$set: {'ct': new Date()}}, false, true)
+db.slivaactualsrevision.update({}, {$set: {'ct': new Date()}}, false, true)
+db.normalizedrevision.update({}, {$set: {'ct': new Date()}}, false, true)
+db.consensusrevision.update({}, {$set: {'ct': new Date()}}, false, true)
+db.vaactualsrevision.update({}, {$set: {'ct': new Date()}}, false, true)
+db.schedulerevision.update({}, {$set: {'ct': new Date()}}, false, true)
+db.scheduleconsensusrevision.update({}, {$set: {'ct': new Date()}}, false, true)
+db.schvaactualsrevision.update({}, {$set: {'ct': new Date()}}, false, true)
 
 db.slirevision.remove({})
 db.sliconsensusrevision.remove({})

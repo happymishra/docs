@@ -36,6 +36,7 @@ docker exec -it containername bash
 # Run docker images in interactive way
 docker run -it imagename bash
 docker run imagename
+docker run --name abc -it imagename
 ```
 
 ```shell

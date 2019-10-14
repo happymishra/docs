@@ -28,7 +28,7 @@ ps -aux | less   ; a - all users ; u - detail information about each process; x 
 
 ```
 # Create virtual environment
-virtual dqenv
+virtualenv dqenv
 ```
 
 ```
@@ -317,6 +317,7 @@ df -P file/goes/here | tail -1 | cut -d' ' -f 1
 find . -name '*.pyc' -delete
 
 ```
+
 
 ```
 # Check RAM

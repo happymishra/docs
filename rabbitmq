@@ -4,9 +4,6 @@
  # Rabbitmq installation
  https://linoxide.com/ubuntu-how-to/install-setup-rabbitmq-ubuntu-16-04/
 
-
-rabbitmqctl list_queues
-
 rabbitmq-plugins enable rabbitmq_management
 rabbitmqadmin get queue=populate_data
 
@@ -26,3 +23,6 @@ cd /var/log/rabbitmq/
 
 # To get rabbitmq version
 sudo rabbitmqctl status
+
+# Ge the list of queue
+rabbitmqctl list_queues
