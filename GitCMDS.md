@@ -42,3 +42,14 @@ git clean -fd
 # Create git ignore files
 touch .gitignore
 ```
+
+```
+# Check the contents of hash
+git stash show -p stash@{0}
+```
+
+## Untracked files
+https://koukia.ca/how-to-remove-local-untracked-files-from-the-current-git-branch-571c6ce9b6b1
+
+## Username and email setting
+https://linuxize.com/post/how-to-configure-git-username-and-email/

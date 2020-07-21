@@ -9,49 +9,49 @@ sudo apt-get install python3.6
 ```
 
 2. Create a folder djnago-handson
-  
+
 ```shell
 mkdir djnago-handson
 ```
-    
+
 3. Install Pipenv
 ```python
 pip install pipenv
 ```
-    
+
 4. Move to the directory where you have create django-workshop folder
 ```shell
 cd /home/rupesh/djnago-handson
 ```
-  
+
 5.   Create pipenv virtual environment and initialise pipenv
 ```python
 # Creates virtual environment using python 3.6
 pipenv install --python 3.6
 ```
-  
+
 6. Activate pipenv virtual environment
 ```python
 pipenv shell
 ```
-    
+
 7. List all the python packages installed in the virtual environment
 ```python
 pip list
 ```
-    
+
 8. Install django in the virtual environment
 ```python
 pipenv install django==2.2
 ```  
-    
+
 9. Check if django installed correctly
 ```python
 pip list
 ```
-  
+
  ----------------------------------------------------------------------------
- 
+
 1. Create a new Django project
 ```python
 django-admin startproject worldcup
@@ -61,7 +61,7 @@ django-admin startproject worldcup
 ```shell
 ls -larth
 ```
-    
+
 3.  Start Django server
 ```python
 python manage.py runserver OR python manage.py runserver 8080
@@ -126,7 +126,7 @@ pipenv --venv
 Uninstall package
 ```python
 pipenv uninstall packageName
-```
+```;
 
 Clean environment and removed the uninstalled packages from the environment
 ```
@@ -156,4 +156,15 @@ exit
 Start Django Shell
 ```python
 python manage.py shell
+```
+
+SQL query for migrations
+```python
+python manage.py sqlmigrate <appname> <migration number eg. 0001 or 0004>
+```
+
+
+Add migrations manually
+```python
+python manage.py makemigrations --name migration_name app_ame --empty
 ```

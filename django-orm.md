@@ -1,6 +1,7 @@
 # Django ORM examples
 
 Models
+
 ```python
 class Author(models.Model):
     name = models.CharField(max_length=255)
@@ -9,8 +10,8 @@ class Author(models.Model):
 
     def __str__(self):
         return self.name
-    
-    
+
+
 class Article(models.Model):
     title = models.CharField(max_length=120)
     description = models.TextField()
@@ -26,7 +27,7 @@ class Article(models.Model):
 
 ----------------------------------------------------------------------
 
-### Get SQL query 
+### Get SQL query
 
 ```python
 a = Article.objects.all()

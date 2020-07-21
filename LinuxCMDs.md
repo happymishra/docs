@@ -343,3 +343,15 @@ press N
 telnet
 ping  # for the ip
 ```
+
+```
+# Get all the pythons installed
+ls -l /usr/bin/python*
+```
+
+```
+# Get which all pythons available on your machine
+which -a python
+```
+
+sudo python3 ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws

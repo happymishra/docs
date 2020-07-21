@@ -102,7 +102,7 @@ docker-compose -f docker-compose.yml -f dev.yml down
 ```
 
 ```shell
-# Run Individiual containers
+# Run Individual containers
 docker-compose up -d servicename
 ```
 
